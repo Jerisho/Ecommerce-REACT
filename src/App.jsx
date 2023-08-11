@@ -1,7 +1,7 @@
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import NavBar from "./components/NavBar/NavBar";
 import "./global.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import ItemDetailContainer from "./components/ItemListContainer/ItemDetailContainer/ItemDetailContainer";
 import { CartContextProvider } from "./context/cartContext";
 import Cart from "./components/NavBar/Cart/Cart";
@@ -12,7 +12,7 @@ function App() {
 	return (
 		<main className="main">
 			<CartContextProvider>
-				<BrowserRouter>
+				<HashRouter>
 					<NavBar />
 					<Routes>
 						<Route
@@ -30,7 +30,7 @@ function App() {
 						<Route path="/checkOut" element={<CheckOutBuy />} />
 						<Route path="/thankyou/:id" element={<Thanksyou />} />
 					</Routes>
-				</BrowserRouter>
+				</HashRouter>
 			</CartContextProvider>
 		</main>
 	);
